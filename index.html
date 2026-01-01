@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>New Year 2026 Wish</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background: linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  font-family:'Poppins',sans-serif;
+}
+
+.container{
+  background: rgba(255,255,255,0.92);
+  padding:35px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,0.25);
+  animation: pop 1.2s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(0.6);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+h1{
+  font-family:'Pacifico',cursive;
+  color:#ff4081;
+  font-size:34px;
+}
+
+input{
+  width:80%;
+  padding:12px;
+  border-radius:20px;
+  border:1px solid #ddd;
+  outline:none;
+  font-size:16px;
+  text-align:center;
+}
+
+button{
+  margin-top:18px;
+  padding:14px 35px;
+  border:none;
+  border-radius:30px;
+  background:#ff4081;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+button:hover{
+  background:#e73370;
+}
+
+#wish{
+  display:none;
+  margin-top:25px;
+  font-size:22px;
+  animation: fade 1.5s ease;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+img{
+  width:200px;
+  margin-top:20px;
+  border-radius:20px;
+}
+
+/* floating emojis */
+.star{
+  position:absolute;
+  font-size:22px;
+  animation: float 6s infinite linear;
+}
+
+@keyframes float{
+  from{transform:translateY(100vh);opacity:0}
+  to{transform:translateY(-10vh);opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/12/20/audio_4e4f41bb9e.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Floating emojis -->
+<div class="star" style="left:10%">✨</div>
+<div class="star" style="left:30%">🎆</div>
+<div class="star" style="left:50%">🎉</div>
+<div class="star" style="left:70%">💖</div>
+<div class="star" style="left:90%">🎀</div>
+
+<div class="container">
+  <h1>✨ New Year 2026 ✨</h1>
+
+  <input type="text" id="username" placeholder="Enter your name 💗">
+
+  <br>
+
+  <button onclick="showWish()">Show Wish</button>
+
+  <div id="wish"></div>
+</div>
+
+<script>
+function showWish(){
+  let name = document.getElementById("username").value;
+  if(name === ""){
+    alert("Name enter pannunga chellam 💕");
+    return;
+  }
+
+  document.getElementById("wish").innerHTML = 
+    "🎉 <b>Happy New Year 2026, " + name + "!</b> 🎉<br><br>" +
+    "May this year bring you love, success and endless happiness 💖✨" +
+    "<br><img src='https://images.unsplash.com/photo-1549057446-9f5c6ac91a04'>";
+
+  document.getElementById("wish").style.display="block";
+}
+</script>
+
+</body>
+  </html>
